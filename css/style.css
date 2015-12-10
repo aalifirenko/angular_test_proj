@@ -1,0 +1,7 @@
+/* Fix ui-bootstrap problem with modal */
+.modal {
+    display: block;
+}
+.items-table, .reviews-table {
+    margin-top: 50px;
+}

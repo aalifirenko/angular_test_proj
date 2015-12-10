@@ -1,0 +1,20 @@
+<h3>Товары</h3>
+<table class="table items-table table-striped">
+    <thead>
+        <tr>
+            <th ng-click="order('id')">ID</th>
+            <th ng-click="order('name')">Наименование</th>
+            <th ng-click="order('price')">Цена</th>
+            <th>Фото</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-click="openDetails(item)" ng-repeat="(num, item) in data | orderBy:predicate:reverse">
+            <th>{{ item.id }}</th>
+            <td>{{ item.name }}</td>
+            <td>{{ item.price }}</td>
+            <td><img width="100" src="{{ item.image }}" /></td>
+        </tr>
+    </tbody>
+</table>

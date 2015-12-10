@@ -1,0 +1,44 @@
+<h3>Отзывы</h3>
+<button class="btn btn-primary" ng-click="addReview()">Добавить отзыв</button>
+<table class="table reviews-table table-striped">
+    <thead>
+    <tr>
+        <th>Имя отправителя</th>
+        <th>Дата</th>
+        <th>Текст</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr ng-repeat="(num, item) in data">
+        <th>{{ item.name }}</th>
+        <td>{{ item.date }}</td>
+        <td>{{ item.text }}</td>
+    </tr>
+    </tbody>
+</table>
+
+
+<!-- Add review modal -->
+<script type="text/ng-template" id="reviewsModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Добавить отзыв</h3>
+    </div>
+    <div class="modal-body">
+        <form name="addReviewForm" novalidate>
+            <div ng-class="{'form-group': true, 'has-error': addReviewForm.name.$invalid}">
+                <label for="exampleInputEmail1">Ваше имя:</label>
+                <input type="text" ng-model="name" name="name" required class="form-control" id="exampleInputEmail1" placeholder="ваше имя">
+            </div>
+            <div ng-class="{'form-group': true, 'has-error': addReviewForm.text.$invalid}">
+                <label for="exampleInputPassword1">Ваш отзыв:</label>
+                <input type="text" ng-model="text" name="text" required class="form-control" id="exampleInputPassword1" placeholder="ваш отзыв">
+            </div>
+            <button type="submit" ng-click="saveReviews()" class="btn btn-success">Отправить</button>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>

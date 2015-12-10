@@ -1,0 +1,14 @@
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Товар: {{ data.name }}</h3>
+    </div>
+    <div class="modal-body">
+        <p><h3>{{ data.name }}</h3></p>
+        <span><img src="{{ data.image }}" /></span>
+        <span>{{ data.price }}</span>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
